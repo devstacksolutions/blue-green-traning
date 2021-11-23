@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <title>PDF.js viewer</title>
+  </head>
+<style type="text/css">
+	.btn-pdf{
+		font-size: 16px;
+	    background: #555;
+	    color: #fff;
+	    text-decoration: none;
+	    display: inline-block;
+	    padding: 10px 20px;
+	    border-radius: 5px;
+	    margin: 20px;
+	}
+</style>
+  <body tabindex="1">
+    <a href="sample.pdf" class="btn-pdf">Sample PDF</a>
+    <a href="sample-file.pdf" class="btn-pdf">Tracemonkey PDF</a>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    	jQuery('.btn-pdf').on('click', function(e){
+    		e.preventDefault();
+    		var url = $(this).attr('href');
+    		var incode = window.btoa(url);
+    		window.location.href = "/pdf.html?pdf="+incode;
+    	});
+    </script>
+  </body>
+</html>
