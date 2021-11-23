@@ -24,11 +24,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("pdfjs-dist/build/pdf", [], factory);
+		define("build/pdf", [], factory);
 	else if(typeof exports === 'object')
-		exports["pdfjs-dist/build/pdf"] = factory();
+		exports["build/pdf"] = factory();
 	else
-		root["pdfjs-dist/build/pdf"] = root.pdfjsLib = factory();
+		root["build/pdf"] = root.pdfjsLib = factory();
 })(this, function() {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -3023,7 +3023,7 @@ const PDFWorkerUtil = {
 {
   if (_is_node.isNodeJS && typeof require === "function") {
     PDFWorkerUtil.isWorkerDisabled = true;
-    PDFWorkerUtil.fallbackWorkerSrc = "../pdf.worker.js";
+    PDFWorkerUtil.fallbackWorkerSrc = "pdf.worker.js";
   } else if (typeof document === "object") {
     const pdfjsFilePath = document?.currentScript?.src;
 
