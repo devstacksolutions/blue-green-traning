@@ -228,7 +228,7 @@ const defaultOptions = {
     kind: OptionKind.WORKER
   },
   workerSrc: {
-    value: "/pdf.worker.js",
+    value: "../build/pdf.worker.js",
     kind: OptionKind.WORKER
   }
 };
@@ -3867,10 +3867,10 @@ function apiPageModeToSidebarView(mode) {
 
 let pdfjsLib;
 
-if (typeof window !== "undefined" && window["pdfjs-dist/pdf"]) {
-  pdfjsLib = window["pdfjs-dist/pdf"];
+if (typeof window !== "undefined" && window["pdfjs-dist/build/pdf"]) {
+  pdfjsLib = window["pdfjs-dist/build/pdf"];
 } else {
-  pdfjsLib = require("/pdf.js");
+  pdfjsLib = require("../build/pdf.js");
 }
 
 module.exports = pdfjsLib;
